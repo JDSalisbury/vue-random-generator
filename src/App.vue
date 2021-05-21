@@ -2,23 +2,22 @@
   <v-app>
     <AppBar>
       <v-main>
-        <h1>Test</h1>
+        <Home />
       </v-main>
     </AppBar>
   </v-app>
-
 </template>
 
 <script>
-import AppBar from '@/components/AppBar'
+import AppBar from '@/components/AppBar';
+import Home from '@/views/Home';
 export default {
   name: 'app',
   components: {
-    AppBar
+    AppBar,
+    Home
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

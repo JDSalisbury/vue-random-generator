@@ -40,6 +40,7 @@ export default {
             let headerList = headerLine.split(',');
 
             let headerCount = headerList.length;
+            
             headerList.map((item) => {
               headers.push({
                 text: item,
@@ -51,15 +52,15 @@ export default {
             lineItemList.shift();
 
             lineItemList.map((listItem) => {
-              console.log(listItem)
+
               let createLineitem = {};
+              let headerStep = 0
               listItem.split(',').map((item) => {
-                console.log(item);
-                headerList.map(header => {
-                  createLineitem[header] = item
-                })
-                console.log(createLineitem)
+                createLineitem[headerList[headerStep]] = item
+                headerStep++
               });
+
+
               lineItems.push(createLineitem)
             });
 

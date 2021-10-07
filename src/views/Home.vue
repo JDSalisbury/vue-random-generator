@@ -16,6 +16,9 @@
 </template>
 
 <script>
+
+import { mapActions, mapGetters } from "vuex";
+
 export default {
   name: "Home",
   data() {
@@ -83,6 +86,17 @@ export default {
         (error) => alert(error)
       );
     },
+<<<<<<< HEAD
+=======
+    ...mapActions(["getSheets"]),
+  },
+  computed: {
+    ...mapGetters(["sheetState"]),
+  },
+  created() {
+    this.getSheets();
+    console.log(this.sheetState);
+>>>>>>> ff1b7f79b8beada399dc08665a2c3e040b0cde97
   },
 };
 </script>

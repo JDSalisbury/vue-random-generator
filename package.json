@@ -10,14 +10,20 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+<<<<<<< HEAD
     "googleapis": "^39.2.0",
+=======
+    "googleapis": "^75.0.0",
+    "node-fetch": "^2.6.1",
+>>>>>>> ff1b7f79b8beada399dc08665a2c3e040b0cde97
     "vue": "^2.6.10",
-    "vuetify": "^2.5.0"
+    "vuetify": "^2.5.0",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-eslint": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
+    "@vue/cli-service": "^3.3.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",

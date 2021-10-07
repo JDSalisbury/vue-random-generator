@@ -17,11 +17,11 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: "Home",
   data() {
     return {
       headers: [],
-      desserts: []
+      desserts: [],
     };
   },
 
@@ -32,36 +32,36 @@ export default {
         return new Promise((resolve, reject) => {
           let content;
           let headers = [];
-          let lineItems =[];
+          let lineItems = [];
           const reader = new FileReader();
           reader.onloadend = function(e) {
-            let headerLine = e.target.result.split('\n')[0];
+            let headerLine = e.target.result.split("\n")[0];
 
-            let headerList = headerLine.split(',');
+            let headerList = headerLine.split(",");
 
             let headerCount = headerList.length;
-            
+
             headerList.map((item) => {
               headers.push({
                 text: item,
-                value: item
+                value: item,
               });
             });
 
-            let lineItemList = e.target.result.split('\n');
+            let lineItemList = e.target.result.split("\n");
             lineItemList.shift();
 
             lineItemList.map((listItem) => {
-
               let createLineitem = {};
-              let headerStep = 0
-              listItem.split(',').map((item) => {
-                createLineitem[headerList[headerStep]] = item
-                headerStep++
+
+              let headerStep = 0;
+
+              listItem.split(",").map((item) => {
+                createLineitem[headerList[headerStep]] = item;
+                headerStep++;
               });
 
-
-              lineItems.push(createLineitem)
+              lineItems.push(createLineitem);
             });
 
             content = { headers: headers, lineItems: lineItems };
@@ -75,11 +75,15 @@ export default {
         });
       }
       parseFile(file).then(
-        (result) => (console.log(result), (this.headers = result.headers), (this.desserts = result.lineItems)),
+        (result) => (
+          console.log(result),
+          (this.headers = result.headers),
+          (this.desserts = result.lineItems)
+        ),
         (error) => alert(error)
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
